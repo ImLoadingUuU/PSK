@@ -52,7 +52,7 @@ Notification.new("info", SelectedLang["collectData_title"],SelectedLang["collect
 Notification.new("info", SelectedLang["collectData_disagree_title"],SelectedLang["collectData_disagree_description"],true)
 Notification.new("info", SelectedLang["build_info"], Build,true)
 local suc,msg = pcall(function()
-   loadstring(game:HttpGet("https://raw.githubusercontent.com/ImLoadingUuU/PSK/main/".. game.PlaceId .. ".lua"))();       
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/ImLoadingUuU/PSK/main/".. game.PlaceId .. ".lua",true))();       
 end)
 if not suc then
      Notification.new("error", SelectedLang["not_found"], msg,true)
