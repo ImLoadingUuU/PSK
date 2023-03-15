@@ -17,7 +17,8 @@ local Lang = {
           ["collectData_disagree_description"] = "You may need stop using Project SUKA",
           ["build_info"] = "Build Info",
           ["ggs"] = "Switching Generic Games Script",
-          ["ggs_desc"] = "Generic Games Script"
+          ["ggs_desc"] = "Generic Games Script",
+          ["not_found"] = "This game not supported"
      },
       ["zh-cn"] = {
           ["fs_not_supported_title"] = "此外挂不支持文件系统",
@@ -32,7 +33,8 @@ local Lang = {
           ["collectData_disagree_description"] = "请您暂停使用Project-SUKA",
           ["build_info"] = "构建版本",
           ["ggs"] = "通用游戏脚本",
-          ["ggs_desc"] = "已使用通用游戏脚本"
+          ["ggs_desc"] = "已使用通用游戏脚本",
+          ["not_found"] = "此游戏尚未支持",
      } 
 }
 local SelectedLang=  Lang[game:GetService("LocalizationService").RobloxLocaleId] or Lang["en-us"]
@@ -49,4 +51,10 @@ end
 Notification.new("info", SelectedLang["collectData_title"],SelectedLang["collectData_description"],true)
 Notification.new("info", SelectedLang["collectData_disagree_title"],SelectedLang["collectData_disagree_description"],true)
 Notification.new("info", SelectedLang["build_info"], Build,true)
-loadstring(game:HttpGet("https://raw.githubusercontent.com/ImLoadingUuU/PSK/main/".. game.PlaceId .. ".lua"))();
+local suc,msg = pcall(function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/ImLoadingUuU/PSK/main/".. game.PlaceId .. ".lua"))();       
+end)
+if not suc then
+     Notification.new("error", SelectedLang["not_found"], msg,true)
+     end
+
