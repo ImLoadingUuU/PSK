@@ -1,45 +1,115 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Lang = {
-    ["en-us"] = {
-        ["about"] = "Free Roblox Script",
-        ["introTitle"] = "Loading",
-         ["loaded"] = {
-            ["title"] = "Loaded",
-            ["content"] = "Loaded,Thanks you using Project-SUKA"
-        },
-        ["tab"] = {
-            ["esp"]= "ESP",
-            ["settings"] = "Setting"
-        },
-        ["esps"] = {
-            ["killerESP"] = "Killer ESP",
-            ["playerESP"] = "Player ESP"
-        }
-    },
-    ["zh-cn"] = {
-        ["about"] = "免费的罗布乐思脚本",
-        ["introTitle"] = "载入中",
-         ["loaded"] = {
-            ["title"] = "已载入",
-            ["content"] = "已载入,感谢使用Project-SUKA"
-        },
-        ["tab"] = {
-            ["esp"]= "透视",
-            ["settings"] = "设定"
-        },
-        ["esps"] = {
-            ["killerESP"] = "杀手透视",
-            ["playerESP"] = "玩家透视"
-        }
-    }
+   ["en-us"] = {
+      ["about"] = "Free Roblox Script",
+      ["introTitle"] = "Loading",
+      ["loaded"] = {
+         ["title"] = "Loaded",
+         ["content"] = "Loaded,Thanks you using Project-SUKA"
+      },
+      ["tab"] = {
+         ["esp"]= "ESP",
+         ["settings"] = "Setting"
+      },
+      ["esps"] = {
+         ["killerESP"] = "Killer ESP",
+         ["playerESP"] = "Player ESP"
+      }
+   },
+   ["zh-cn"] = {
+      ["about"] = "免费的罗布乐思脚本",
+      ["introTitle"] = "加载中",
+      ["loaded"] = {
+         ["title"] = "已加载",
+         ["content"] = "已加载，感谢您使用Project-SUKA"
+      },
+      ["tab"] = {
+         ["esp"]= "透视",
+         ["settings"] = "设定"
+      },
+      ["esps"] = {
+         ["killerESP"] = "杀手透视",
+         ["playerESP"] = "玩家透视"
+      }
+   },
+   ["ja-jp"] = {
+      ["about"] = "無料のRobloxスクリプト",
+      ["introTitle"] = "ロード中",
+      ["loaded"] = {
+         ["title"] = "ロード完了",
+         ["content"] = "ロード完了、Project-SUKAの使用ありがとうございます"
+      },
+      ["tab"] = {
+         ["esp"]= "ESP",
+         ["settings"] = "設定"
+      },
+      ["esps"] = {
+         ["killerESP"] = "キラーESP",
+         ["playerESP"] = "プレイヤーESP"
+      }
+   },
+   ["ko-kr"] = {
+      ["about"] = "무료 Roblox 스크립트",
+      ["introTitle"] = "로드 중",
+      ["loaded"] = {
+         ["title"] = "로드 완료",
+         ["content"] = "로드 완료, Project-SUKA 사용해 주셔서 감사합니다."
+      },
+      ["tab"] = {
+         ["esp"]= "ESP",
+         ["settings"] = "설정"
+      },
+      ["esps"] = {
+         ["killerESP"] = "킬러 ESP",
+         ["playerESP"] = "플레이어 ESP"
+      }
+   },
+   ["fr-fr"] = {
+      ["about"] = "Script Roblox gratuit",
+      ["introTitle"] = "Chargement",
+      ["loaded"] = {
+         ["title"] = "Chargé",
+         ["content"] = "Chargé, merci d'utiliser Project-SUKA"
+      },
+      ["tab"] = {
+         ["esp"]= "ESP",
+         ["settings"] = "Paramètres"
+      },
+      ["esps"] = {
+         ["killerESP"] = "ESP Tueur",
+         ["playerESP"] = "ESP Joueur"
+      }
+   },
+   ["de-de"] = {
+      ["about"] = "Kostenloses Roblox-Script",
+      ["introTitle"] = "Laden",
+      ["loaded"] = {
+         ["title"] = "Geladen",
+         ["content"] = "Geladen, vielen Dank, dass Sie Project-SUKA verwenden"
+      },
+      ["tab"] = {
+         ["esp"]= "ESP",
+         ["settings"] = "Einstellungen"
+      }
+   }
 }
 local lang = Lang[game:GetService("LocalizationService").RobloxLocaleId] or Lang["en-us"]
+
 local p 
 if game.Players.LocalPlayer.MembershipType == Enum.MembershipType.Premium then
      p = true
 end
 
 local Window = OrionLib:MakeWindow({Name = "Project-SUKA", HidePremium = false, SaveConfig = true, ConfigFolder = "PSA",IntroText = lang["introTitle"]})
+if not Lang[game:GetService("LocalizationService").RobloxLocaleId] then
+	OrionLib:MakeNotification({
+	Name = "Language not supported",
+	Content = "Sorry About That! ",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+
+end
 local Billboards = {
 
 }
