@@ -121,7 +121,7 @@ local PBillboards = {
 
 local ESP = Window:MakeTab({
 	Name = lang.tab.esp,
-	Icon = "rbxassetid://4483345998",
+	Icon = "rbxassetid://7072707514",
 	PremiumOnly = false
 })
 
@@ -131,7 +131,7 @@ local PlayerSection = ESP:AddSection({
 OrionLib:MakeNotification({
 	Name = lang.loaded.title,
 	Content = lang.loaded.content,
-	Image = "rbxassetid://4483345998",
+	Image = "rbxassetid://7072706620",
 	Time = 5
 })
 
