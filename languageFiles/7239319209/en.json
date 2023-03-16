@@ -1,0 +1,21 @@
+{
+ "title": "Ohio",
+ "introTitle": "Loading",
+ "menus": {
+   "esp":{
+      "description": "Useless. for me."
+      "text": "ESP"
+   },
+   "about":{
+      "description": "About this script"
+      "text": "About"
+   },
+   "item":{
+      "description": "Pick up all items."
+      "text": "Item"
+   }
+   
+   
+ },
+  "about": "Suka Development - Project-SUKA",
+}
