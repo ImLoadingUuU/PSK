@@ -6,7 +6,52 @@ local RunService = game:GetService("RunService")
 local LocalPlayer = game:GetService("Players").LocalPlayer
 local Mouse = LocalPlayer:GetMouse()
 local HttpService = game:GetService("HttpService")
-
+local gid = 0
+local OrionLang = {
+   ConfigLoaded = ["en-us"] = {
+      {
+         ["Name"] = "Configuration",
+         ["Content"] = "Auto-loaded configuration for the game " .. gid .. ".",
+      }
+   },
+   ["zh-cn"] = {
+      {
+         ["Name"] = "配置",
+         ["Content"] = "自动加载游戏 " ..gid .. " 的配置。",
+      }
+   },
+   ["ja-jp"] = {
+      {
+         ["Name"] = "設定",
+         ["Content"] = "ゲーム " .. gid .. " の自動読み込み設定。",
+      }
+   },
+   ["ko-kr"] = {
+      {
+         ["Name"] = "설정",
+         ["Content"] = gid .. " 게임의 자동 로드 구성.",
+      }
+   },
+   ["fr-fr"] = {
+      {
+         ["Name"] = "Configuration",
+         ["Content"] = "Configuration automatiquement chargée pour le jeu " .. gid .. ".",
+      }
+   },
+   ["de-de"] = {
+      {
+         ["Name"] = "Konfiguration",
+         ["Content"] = "Automatisch geladene Konfiguration für das Spiel " .. gid .. ".",
+      }
+   },
+   ["es-es"] = {
+      {
+         ["Name"] = "Configuración",
+         ["Content"] = "Configuración cargada automáticamente para el juego " .. gid .. ".",
+      }
+   },
+}
+local SelectedConfigLoadedLang = OrionLang.ConfigLoaded[game:GetService("LocalizationService").RobloxLocaleId] or OrionLang.ConfigLoaded["en-us"]
 local OrionLib = {
 	Elements = {},
 	ThemeObjects = {},
@@ -455,8 +500,8 @@ function OrionLib:Init()
 			if isfile(OrionLib.Folder .. "/" .. game.GameId .. ".txt") then
 				LoadCfg(readfile(OrionLib.Folder .. "/" .. game.GameId .. ".txt"))
 				OrionLib:MakeNotification({
-					Name = "Configuration",
-					Content = "Auto-loaded configuration for the game " .. game.GameId .. ".",
+					Name = SelectedConfigLoadedLang.Name,
+					Content = SelectedConfigLoadedLang.Content,
 					Time = 5
 				})
 			end
