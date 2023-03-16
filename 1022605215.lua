@@ -1,4 +1,4 @@
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/ImLoadingUuU/PSK/main/OrionLib.lua')))()
 local Lang = {
    ["en-us"] = {
       ["about"] = "Free Roblox Script",
