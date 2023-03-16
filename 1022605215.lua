@@ -30,7 +30,8 @@ local Lang = {
       ["esps"] = {
          ["killerESP"] = "杀手透视",
          ["playerESP"] = "玩家透视"
-      }
+      },
+      ["kun"]= "ikun 2yhalf, geigei my kun "
    },
    ["ja-jp"] = {
       ["about"] = "無料のRobloxスクリプト",
