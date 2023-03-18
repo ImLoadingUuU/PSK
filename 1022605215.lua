@@ -141,7 +141,7 @@ ESP:AddToggle({
 	Callback = function(Value)
 	   if Value then
            for i,v in pairs(game.Players:GetChildren()) do
-           if v.Character:FindFirstChild("Knife") or v.Backpack:FindFirstChild("Knife") then
+           if v.Character:FindFirstChild("Knife") or v.Backpack:FindFirstChild("Knife") or  v.Character:FindFirstChild("Body") then
            print("Found")
                local Billboard = Instance.new("BillboardGui")
               Billboard.AlwaysOnTop = true
@@ -173,12 +173,12 @@ ESP:AddToggle({
 })
 
 ESP:AddToggle({
-	Name = lang.esps.PlayerESP,
+	Name = lang.esps.playerESP,
 	Default = false,
 	Callback = function(Value)
 	    if Value then
            for i,v in pairs(game.Players:GetChildren()) do
-           if not v.Character:FindFirstChild("Knife")  and not v.Backpack:FindFirstChild("Knife") and v ~= game.Players.LocalPlayer then
+           if not v.Character:FindFirstChild("Knife")  and not v.Backpack:FindFirstChild("Knife") and not v.Character:FindFirstChild("Body") and v ~= game.Players.LocalPlayer then
            print("Found")
                local Billboard = Instance.new("BillboardGui")
                Billboard.AlwaysOnTop = true
